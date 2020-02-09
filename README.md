@@ -20,7 +20,7 @@ If you didn't find node and npm, install node and npm in termial.
 
 `npm install - g @angular/cli`
 
-[Angular CLI]: https://cli.angular.io/
+ https://cli.angular.io/
 
 3. Download the project or git clone
 
