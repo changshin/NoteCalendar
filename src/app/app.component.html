@@ -1,0 +1,62 @@
+<div class="toolbar" role="banner">
+  <div class='col-3'>
+    <img width="40" alt="Angular"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+    <span>Demo</span>
+  </div>
+  <div class='col-9' >
+      <div class="refresh">
+      2020 Calendar:
+      <span class="ml10"> </span>
+      Start month:<select [(ngModel)]='startMonth'>
+        <option [value]="month" *ngFor="let month of monthList" [selected]="month === startMonth">{{month}}</option>
+      </select>
+      <span class="ml10"> </span>
+      End month:<select [(ngModel)]='endMonth'>
+        <option [value]="month" *ngFor="let month of monthList" [selected]="month === endMonth">{{month}}</option>
+      </select>
+      <span class="ml10"> </span>
+      Notes:<select [(ngModel)]='noteCount'>
+        <option [value]="note" *ngFor="let note of noteList" [selected]="note === noteCount">{{note}}</option>
+      </select>
+      <span class="ml10"> </span>
+      <button (click)="refreshNotes()" class="btn-link">Refresh</button>
+    </div>
+  </div>
+</div>
+
+<div class="content" role="main">
+
+  <div class='app-top row'>
+    <div class='col'>
+      <button (click)="toggleWeekends()" class="btn-sm btn-primary">{{weekendsLabel}}</button>
+    </div>
+    <div class='col'>
+      <form [formGroup]="formGroup">
+        <input type="text" class="searchInput" formControlName="searchWord" id="searchInput" name="searchWord"
+          placeholder="&#xf002; Search" minlength="2">
+      </form>
+    </div>
+    <div class='col'>
+      <button (click)="openInstruction()" class="btn btn-link">Instruction</button>
+    </div>
+  </div>
+
+  <div class='app-calendar' *ngIf="calendarVisible">
+    <full-calendar #calendar defaultView="dayGridMonth"
+      [header]="calendarHeader"
+      [displayEventTime]="false"
+      [plugins]="calendarPlugins"
+      [weekends]="calendarWeekends"
+      [events]="calendarEvents"
+      (dateClick)="handleDateClick($event)"
+      (eventMouseEnter)="eventMouseEnter($event)"
+      (eventMouseLeave)="eventMouseLeave($event)"
+      (eventClick)="eventClick($event)"></full-calendar>
+  </div>
+
+  <footer>
+    Chang Shin, 2020-02-08
+  </footer>
+
+</div>

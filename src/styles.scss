@@ -1,0 +1,28 @@
+
+body {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+// you must include each plugins' css
+// paths prefixed with ~ signify node_modules
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+
+.modal-header .close {
+  padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem auto;
+  outline: none;
+}
+
+.required {
+  display: inline-table;
+  margin-top: 4px;
+  font-size: 1rem;
+  color: red;
+}
+
+.red-border-class {
+    border-color: #ff4c6a;
+}

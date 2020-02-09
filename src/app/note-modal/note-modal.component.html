@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h4 class="modal-title">Note Event</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss(ACTION.CANCEL)">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form name="form" (ngSubmit)="f.form.valid && save(noteEvent.type)" #f="ngForm" novalidate>
+    Due date: {{noteEvent.start}}
+    <p></p>
+    Title<span class='required'>*</span>: <input type="text" [(ngModel)]="noteEvent.title" name="title" #title="ngModel" class="form-control" [ngClass]="{'red-border-class': title.errors}"  required>
+    <p></p>
+    Note<span class='required'>*</span>: <textarea type="text" [(ngModel)]="noteEvent.note" rows="4" cols="45" name="note" #note="ngModel" class="form-control" [ngClass]="{'red-border-class': note.errors}" required></textarea>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn-sm btn-secondary" (click)="activeModal.close(ACTION.CANCEL)">Cancel</button>
+  <button type="button" class="btn-sm btn-danger" *ngIf="noteEvent.id" (click)="save(ACTION.DELETE)">Delete</button>
+<button type="button" class="btn-sm btn-primary" type="submit" (click)="save(noteEvent.type)" diabled="" >{{noteEvent.type}}</button>
+</div>
