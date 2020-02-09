@@ -7,10 +7,10 @@ This is a Angular example project to view notes with their due date on a calenda
 
 1. Check node and npm version.
 
-``
+```bash
 node --version
 npm --version
-``
+```
 If you didn't find node and npm, install node and npm in termial.
 
 `https://nodejs.org/en/download/`
