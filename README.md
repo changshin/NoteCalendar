@@ -1,21 +1,25 @@
 
 ## Angular View notes Example Project
 
-This is a Angular example project to view notes with their due date on a calenda.  It is a simple demo project that has no backend API and database. Fake noets are created and saved in local storage when you start it.
+This is a Angular example project to view notes with their due date on a calenda.  It is a simple demo project that has no backend API and database. Fake notes are created and saved in local storage when you start it.
 
 ## Installation
 
-1. Check node and npm version. 
-`
+1. Check node and npm version.
+
+``
 node --version
 npm --version
-`
+``
 If you didn't find node and npm, install node and npm in termial.
+
 `https://nodejs.org/en/download/`
 
 
 2. Install @angular/cli in terminal
+
 `npm install - g @angular/cli`
+
 [Angular CLI]: https://cli.angular.io/
 
 3. Download the project or git clone
