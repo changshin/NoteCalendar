@@ -21,8 +21,8 @@ If you didn't find node and npm, install node and npm in termial.
 3. Download the project or git clone
 
 ```bash
-git clone https://github.com/fullcalendar/fullcalendar-example-projects.git
-cd fullcalendar-example-projects/angular
+git clone https://github.com/changshin/NoteCalendar
+cd NoteCalendar
 npm install
 ```
 
