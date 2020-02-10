@@ -17,7 +17,7 @@ export class InstructionComponent implements OnInit {
       'How to delete a note? Click a note. Then click "Delete" button.',
       'How to search/filter? Type in search box.',
       'How to hide/show weekends? Click "Without/with Weekends".',
-      'How to refresh sample notes? select start, end, and notes at right top bar. then click "Refresh".'
+      'How to refresh sample notes in month(s)? Select between months at right top bar. then click "Refresh".'
     ];
 
     constructor(public activeModal: NgbActiveModal) {}

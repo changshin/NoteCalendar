@@ -30,10 +30,9 @@ cd NoteCalendar
 npm install
 ```
 
-4. Build commands
+4. Run commands
 
 ```bash
-npm run build # build to a directory
 npm run start # continously build, as a server
 ```
 

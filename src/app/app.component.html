@@ -8,13 +8,14 @@
       <div class="refresh">
       2020 Calendar:
       <span class="ml10"> </span>
-      Start month:<select [(ngModel)]='startMonth'>
-        <option [value]="month" *ngFor="let month of monthList" [selected]="month === startMonth">{{month}}</option>
-      </select>
-      <span class="ml10"> </span>
-      End month:<select [(ngModel)]='endMonth'>
-        <option [value]="month" *ngFor="let month of monthList" [selected]="month === endMonth">{{month}}</option>
-      </select>
+      between
+      <select [(ngModel)]='startMonth'>
+        <option [value]="month.value" *ngFor="let month of monthList" [selected]="month.value === startMonth">{{month.label}}</option>
+      </select> month
+      <span class="ml5"> </span>~<span class="ml5"> </span>
+      <select [(ngModel)]='endMonth'>
+        <option [value]="month.value" *ngFor="let month of monthList" [selected]="month.value === endMonth">{{month.label}}</option>
+      </select> month
       <span class="ml10"> </span>
       Notes:<select [(ngModel)]='noteCount'>
         <option [value]="note" *ngFor="let note of noteList" [selected]="note === noteCount">{{note}}</option>

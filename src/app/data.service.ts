@@ -29,7 +29,8 @@ export class DataService {
   }
 
   searchData(table, search): any {
-    return table.filter(element => element.title.includes(search) || element.note.includes(search));
+    return table.filter(element => element.title.toLowerCase().includes(search.toLowerCase())
+    || element.note.toLowerCase().includes(search.toLowerCase()));
   }
 
   getSampleNotEvents(startMonth, endMonth, noteCount) {
@@ -37,10 +38,15 @@ export class DataService {
     if  ( parseInt(startMonth) > parseInt(endMonth)) {
       [startMonth, endMonth] = [endMonth, startMonth];
     }
-    const startDate = `2020-${startMonth}-01`;
-    let date = new Date(`2020-${endMonth}-01`);
-    let date2 = new Date(date.getFullYear(), date.getMonth() + 2, 0 );
+
+    let date = new Date(`2020-${startMonth}-01`);
+    let date2 = new Date(date.getFullYear(), date.getMonth() + 1, 1 );
+    const startDate = this.datePipe.transform(date2, 'yyyy-MM-dd');
+
+    date = new Date(`2020-${endMonth}-01`);
+    date2 = new Date(date.getFullYear(), date.getMonth() + 2, 0 );
     const endDate = this.datePipe.transform(date2, 'yyyy-MM-dd');
+
     for (let i = 0; i < noteCount; i++) {
       noteEvents.push(this.getFakeNoteEvent(startDate, endDate));
     }

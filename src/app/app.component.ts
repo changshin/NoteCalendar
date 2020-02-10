@@ -37,10 +37,18 @@ export class AppComponent implements OnInit {
   searchWord = '';
   searchField: FormControl;
   formGroup: FormGroup;
-  monthList = ['01', '02', '03', '04', '05', '06', '07', '08'];
+  monthList = [
+    {value: '01', label: 'Jan'}, 
+    {value: '02', label: 'Feb'},
+    {value: '03', label: 'Mar'},
+    {value: '04', label: 'Apr'},
+    {value: '05', label: 'May'},
+    {value: '06', label: 'Jun'},
+    {value: '07', label: 'Jul'},
+    {value: '08', label: 'Aug'}];
   startMonth = '01';
   endMonth = '03';
-  noteList = [20, 30, 40, 50, 60, 70];
+  noteList = [20, 30, 40, 50, 60, 70, 80, 90];
   noteCount = 30;
 
   calendarHeader = {
