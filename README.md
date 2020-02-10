@@ -30,11 +30,14 @@ cd NoteCalendar
 npm install
 ```
 
+## Run
+
 4. Run commands
 
 ```bash
 npm run start # continously build, as a server
 ```
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
 
 5. After running the `npm run start` command, you will be given a localhost URL that can be visited in a browser.
 
